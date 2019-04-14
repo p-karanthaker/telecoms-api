@@ -7,10 +7,11 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Phone Number Tests")
 public class PhoneNumberTest {
 
+  private final PhoneNumber number = new PhoneNumber("07123123123");
+
   @Test
   @DisplayName("Test Phone Number Is Returned")
   public void testRetrievalOfPhoneNumber() {
-    final PhoneNumber number = new PhoneNumber("07123123123");
     Assertions.assertEquals("07123123123", number.getNumber());
   }
 
