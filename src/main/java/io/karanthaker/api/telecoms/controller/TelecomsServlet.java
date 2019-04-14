@@ -30,6 +30,7 @@ public class TelecomsServlet extends HttpServlet {
           final int customerId = Integer.parseInt(req.getParameter("customer"));
           final Set<PhoneNumber> customerNumbers = dataStore.getCustomersNumbers(customerId);
           out.print(customerNumbers.toString());
+          break;
         } else if (req.getParameterMap().containsKey("activate")) {
           final String number = req.getParameter("activate");
           final boolean activated = dataStore.activatePhoneNumber(number);
@@ -38,9 +39,10 @@ public class TelecomsServlet extends HttpServlet {
           } else {
             out.print("{ \"message\": \"Phone number not found!\" }");
           }
+          break;
         }
-        break;
       default:
+        out.print("{ \"message\": \"Invalid request.\" }");
         break;
     }
     

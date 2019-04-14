@@ -7,7 +7,6 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -78,6 +77,16 @@ public class TelecomsServletTest {
     Mockito.verify(request, Mockito.atLeast(1)).getParameter("activate");
 
     final String expectedJson = "{ \"message\": \"Phone number was activated successfully.\" }";
+    Assertions.assertEquals(expectedJson, stringWriter.toString());
+  }
+
+  @Test
+  @DisplayName("Endpoint - Unknown Endpoint")
+  public void testUnknownEndpoint() throws Exception {
+    Mockito.when(request.getPathInfo()).thenReturn("/");
+    servlet.doGet(request, response);
+
+    final String expectedJson = "{ \"message\": \"Invalid request.\" }";
     Assertions.assertEquals(expectedJson, stringWriter.toString());
   }
 
