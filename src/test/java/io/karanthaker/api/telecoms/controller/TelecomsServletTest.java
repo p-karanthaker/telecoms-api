@@ -35,7 +35,8 @@ public class TelecomsServletTest {
     Mockito.when(request.getPathInfo()).thenReturn("/numbers");
     servlet.doGet(request, response);
 
-    Assertions.assertEquals("Get All Phone Numbers", stringWriter.toString());
+    final String expectedJson = "[{ \"number\": 1, \"activated\": false }, { \"number\": 2, \"activated\": false }, { \"number\": 3, \"activated\": false }, { \"number\": 4, \"activated\": false }, { \"number\": 5, \"activated\": false }, { \"number\": 6, \"activated\": false }, { \"number\": 7, \"activated\": false }, { \"number\": 8, \"activated\": false }, { \"number\": 9, \"activated\": false }, { \"number\": 10, \"activated\": false }]";
+    Assertions.assertEquals(expectedJson, stringWriter.toString());
   }
 
 }
