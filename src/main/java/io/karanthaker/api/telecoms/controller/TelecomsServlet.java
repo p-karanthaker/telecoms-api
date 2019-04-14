@@ -27,11 +27,17 @@ public class TelecomsServlet extends HttpServlet {
         break;
       case "/numbers/":
         if (req.getParameterMap().containsKey("customer")) {
-          String c = req.getParameter("customer");
-          final int customerId = Integer.parseInt(c);
+          final int customerId = Integer.parseInt(req.getParameter("customer"));
           final Set<PhoneNumber> customerNumbers = dataStore.getCustomersNumbers(customerId);
           out.print(customerNumbers.toString());
-          break;
+        } else if (req.getParameterMap().containsKey("activate")) {
+          final String number = req.getParameter("activate");
+          final boolean activated = dataStore.activatePhoneNumber(number);
+          if (activated) {
+            out.print("{ \"message\": \"Phone number was activated successfully.\" }");
+          } else {
+            out.print("{ \"message\": \"Phone number not found!\" }");
+          }
         }
         break;
       default:

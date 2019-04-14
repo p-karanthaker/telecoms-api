@@ -25,6 +25,9 @@ public class DataStore {
    * @return a DataStore instance.
    */
   public static DataStore getInstance() {
+    if (instance == null) {
+      instance = new DataStore();
+    }
     return instance;
   }
 
