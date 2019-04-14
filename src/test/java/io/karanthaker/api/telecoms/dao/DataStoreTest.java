@@ -29,4 +29,11 @@ public class DataStoreTest {
     Assertions.assertEquals(expected, dataStore.getCustomersNumbers(1));
   }
 
+  @Test
+  @DisplayName("Activate An Existing and Non-Existing Phone Number")
+  public void activatePhoneNumber() {
+    Assertions.assertTrue(dataStore.activatePhoneNumber("1"));
+    Assertions.assertFalse(dataStore.activatePhoneNumber("100"));
+  }
+
 }
