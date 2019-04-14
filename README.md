@@ -14,7 +14,7 @@ This will create a jar which contains a standalone Tomcat 7 server with the Tele
 ## Running The Application
 Run the JAR that you either built from the previous step, or downloaded from the releases tab by running:
 
-```java -jar telecoms-api-1.0-SNAPSHOT-war-exec.jar```
+```java -jar telecoms-api-1.0.jar```
 
 Open your internet browser and navigate to: <http://localhost:8080/api/> 
 
