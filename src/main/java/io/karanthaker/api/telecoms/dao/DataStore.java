@@ -47,6 +47,11 @@ public class DataStore {
     return numbers;
   }
 
+  /**
+   * Get all PhoneNumbers associated with a given Customer.
+   * @param customerId the Customer whose numbers will be retrieved.
+   * @return a Set of PhoneNumbers.
+   */
   public Set<PhoneNumber> getCustomersNumbers(int customerId) {
     if (customers.containsKey(customerId)) {
       final Customer customer = customers.get(customerId);
