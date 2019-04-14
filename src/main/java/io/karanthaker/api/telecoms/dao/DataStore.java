@@ -55,4 +55,18 @@ public class DataStore {
       return new HashSet<>();
     }
   }
+
+  /**
+   * Activates a given phone number in the DataStore.
+   * @param number the number to activate.
+   * @return True if activation was successful. False if the number does not exist in the DataStore.
+   */
+  public boolean activatePhoneNumber(String number) {
+    int location = numbers.indexOf(new PhoneNumber(number));
+    if (location > -1) {
+      numbers.get(location).activate();
+      return true;
+    }
+    return false;
+  }
 }
