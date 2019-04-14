@@ -13,4 +13,14 @@ public class PhoneNumberTest {
     final PhoneNumber number = new PhoneNumber("07123123123");
     Assertions.assertEquals("07123123123", number.getNumber());
   }
+
+  @Test
+  @DisplayName("Phone Number Activation")
+  public void testPhoneNumberActivation() {
+    Assertions.assertFalse(number.activated());
+
+    number.activate();
+
+    Assertions.assertTrue(number.activated());
+  }
 }
