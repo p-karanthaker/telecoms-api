@@ -60,4 +60,19 @@ public class TelecomsServletTest {
     Assertions.assertEquals(expectedJson, stringWriter.toString());
   }
 
+  @Test
+  @DisplayName("Endpoint - Activate A Phone Number")
+  public void testActivationOfAPhoneNumber() {
+    Mockito.when(request.getPathInfo()).thenReturn("/numbers/");
+    Mockito.when(request.getParameter("activate")).thenReturn("1");
+
+    final HashMap<String, String> params = new HashMap<>();
+    params.put("activate", "1");
+    Mockito.when(request.getParameterMap()).thenReturn(params);
+
+    final String expectedJson = "[{ \"number\": 1, \"activated\": true }, { \"number\": 2, \"activated\": false }, { \"number\": 3, \"activated\": false }, { \"number\": 4, \"activated\": false }, { \"number\": 5, \"activated\": false }, { \"number\": 6, \"activated\": false }, { \"number\": 7, \"activated\": false }, { \"number\": 8, \"activated\": false }, { \"number\": 9, \"activated\": false }, { \"number\": 10, \"activated\": false }]";
+    Assertions.assertEquals(expectedJson, stringWriter.toString());
+
+  }
+
 }
