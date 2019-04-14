@@ -40,6 +40,9 @@ public class TelecomsServlet extends HttpServlet {
             out.print("{ \"message\": \"Phone number not found!\" }");
           }
           break;
+        } else {
+          out.print(dataStore.getAllNumbers());
+          break;
         }
       default:
         out.print("{ \"message\": \"Invalid request.\" }");
