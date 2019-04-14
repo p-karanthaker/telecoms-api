@@ -7,7 +7,7 @@
 
   <servlet>
     <servlet-name>TelecomsServlet</servlet-name>
-    <servlet-class>io.karanthaker.api.TelecomsServlet</servlet-class>
+    <servlet-class>io.karanthaker.api.telecoms.controller.TelecomsServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>

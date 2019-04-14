@@ -1,4 +1,4 @@
-package io.karanthaker.api;
+package io.karanthaker.api.telecoms.controller;
 
 import javax.servlet.http.HttpServlet;
 

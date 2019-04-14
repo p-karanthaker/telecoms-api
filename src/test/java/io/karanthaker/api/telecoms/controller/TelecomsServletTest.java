@@ -1,4 +1,4 @@
-package io.karanthaker.api;
+package io.karanthaker.api.telecoms.controller;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
