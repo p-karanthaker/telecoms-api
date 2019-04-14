@@ -48,7 +48,7 @@ public class TelecomsServlet extends HttpServlet {
         out.print("{ \"message\": \"Invalid request.\" }");
         break;
     }
-    
+
     out.flush();
   }
 }
