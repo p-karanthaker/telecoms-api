@@ -1,5 +1,7 @@
 package io.karanthaker.api.telecoms.model;
 
+import java.util.Objects;
+
 /** Model for a phone number and it's activation status. */
 public class PhoneNumber {
 
@@ -46,6 +48,29 @@ public class PhoneNumber {
    */
   @Override
   public String toString() {
-    return String.format("{ \"number\": %s }", this.number);
+    return String.format("{ \"number\": %s, \"activated\": %b }", this.number, this.activated);
+  }
+
+  /**
+   * Overridden equals to compare objects using the number field.
+   * @param obj the object to compare to.
+   * @return true if objects are the same, and true if number fields are the same.
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) return true;
+    if (!(obj instanceof PhoneNumber)) return false;
+
+    PhoneNumber phoneNumber = (PhoneNumber) obj;
+    return Objects.equals(number, phoneNumber.number);
+  }
+
+  /**
+   * Must be overridden to ensure object comparisons on the number field are done correctly.
+   * @return the hash code.
+   */
+  @Override
+  public int hashCode() {
+    return Objects.hash(number);
   }
 }
