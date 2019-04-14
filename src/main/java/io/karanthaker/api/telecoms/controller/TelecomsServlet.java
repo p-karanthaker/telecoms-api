@@ -5,6 +5,7 @@ import io.karanthaker.api.telecoms.model.PhoneNumber;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Set;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,6 +24,15 @@ public class TelecomsServlet extends HttpServlet {
       case "/numbers":
         final List<PhoneNumber> numbers = dataStore.getAllNumbers();
         out.print(numbers.toString());
+        break;
+      case "/numbers/":
+        if (req.getParameterMap().containsKey("customer")) {
+          String c = req.getParameter("customer");
+          final int customerId = Integer.parseInt(c);
+          final Set<PhoneNumber> customerNumbers = dataStore.getCustomersNumbers(customerId);
+          out.print(customerNumbers.toString());
+          break;
+        }
         break;
       default:
         break;
