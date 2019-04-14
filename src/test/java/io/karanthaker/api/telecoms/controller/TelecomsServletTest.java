@@ -42,7 +42,7 @@ public class TelecomsServletTest {
     Mockito.when(request.getPathInfo()).thenReturn("/numbers");
     servlet.doGet(request, response);
 
-    final String expectedJson = "[{ \"number\": 1, \"activated\": false }, { \"number\": 2, \"activated\": false }, { \"number\": 3, \"activated\": false }, { \"number\": 4, \"activated\": false }, { \"number\": 5, \"activated\": false }, { \"number\": 6, \"activated\": false }, { \"number\": 7, \"activated\": false }, { \"number\": 8, \"activated\": false }, { \"number\": 9, \"activated\": false }, { \"number\": 10, \"activated\": false }]";
+    final String expectedJson = "[{ \"number\": \"1\", \"activated\": false }, { \"number\": \"2\", \"activated\": false }, { \"number\": \"3\", \"activated\": false }, { \"number\": \"4\", \"activated\": false }, { \"number\": \"5\", \"activated\": false }, { \"number\": \"6\", \"activated\": false }, { \"number\": \"7\", \"activated\": false }, { \"number\": \"8\", \"activated\": false }, { \"number\": \"9\", \"activated\": false }, { \"number\": \"10\", \"activated\": false }]";
     Assertions.assertEquals(expectedJson, stringWriter.toString());
   }
 
@@ -59,7 +59,7 @@ public class TelecomsServletTest {
     servlet.doGet(request, response);
     Mockito.verify(request, Mockito.atLeast(1)).getParameter("customer");
 
-    final String expectedJson = "[{ \"number\": 1, \"activated\": false }, { \"number\": 2, \"activated\": false }, { \"number\": 3, \"activated\": false }]";
+    final String expectedJson = "[{ \"number\": \"1\", \"activated\": false }, { \"number\": \"2\", \"activated\": false }, { \"number\": \"3\", \"activated\": false }]";
     Assertions.assertEquals(expectedJson, stringWriter.toString());
   }
 

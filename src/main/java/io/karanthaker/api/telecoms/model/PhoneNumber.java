@@ -59,7 +59,7 @@ public class PhoneNumber {
    */
   @Override
   public String toString() {
-    return String.format("{ \"number\": %s, \"activated\": %b }", this.number, this.activated);
+    return String.format("{ \"number\": \"%s\", \"activated\": %b }", this.number, this.activated);
   }
 
   /**
