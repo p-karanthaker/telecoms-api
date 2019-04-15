@@ -20,8 +20,8 @@ Open your internet browser and navigate to: <http://localhost:8080/api/>
 
 ## API Endpoints
 1. [Get All Phone Numbers](#1-get-all-phone-numbers) - ```GET /api/numbers/```
-2. [Get A Customer's Phone Numbers](#2-get-a-customers-phone-numbers) - ```GET /api/numbers/?customer:id```
-3. [Activate A Phone Number](#3-activate-a-phone-number) - ```GET /api/numbers/?activate:phoneNumber```
+2. [Get A Customer's Phone Numbers](#2-get-a-customers-phone-numbers) - ```GET /api/numbers/?customer=id```
+3. [Activate A Phone Number](#3-activate-a-phone-number) - ```GET /api/numbers/?activat=:phoneNumber```
 
 ### 1. Get All Phone Numbers
 Get an array of all phone numbers.
@@ -83,7 +83,7 @@ Get an array of all phone numbers.
 ### 2. Get A Customer's Phone Numbers
 Get an array of all phone numbers associated with a given customer.
 
-**URL** : ```/api/numbers/?customer:id```
+**URL** : ```/api/numbers/?customer=id```
 
 **Method** : ```GET```
 
@@ -92,6 +92,9 @@ Get an array of all phone numbers associated with a given customer.
 **Permissions Required** : None
 
 #### Response Example
+```
+http://localhost:8080/api/numbers/?customer=1
+```
 ```
 [
   {
@@ -112,7 +115,7 @@ Get an array of all phone numbers associated with a given customer.
 ### 3. Activate A Phone Number
 Activate a given phone number.
 
-**URL** : ```/api/numbers/?activate:phoneNumber```
+**URL** : ```/api/numbers/?activate=phoneNumber```
 
 **Method** : ```GET```
 
@@ -121,6 +124,9 @@ Activate a given phone number.
 **Permissions Required** : None
 
 #### Response Example
+```
+http://localhost:8080/api/numbera/?activate=1
+```
 ##### Success Response
 ```
 {
