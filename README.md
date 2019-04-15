@@ -125,7 +125,7 @@ Activate a given phone number.
 
 #### Response Example
 ```
-http://localhost:8080/api/numbera/?activate=1
+http://localhost:8080/api/numbers/?activate=1
 ```
 ##### Success Response
 ```
