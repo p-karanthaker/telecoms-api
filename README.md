@@ -21,7 +21,7 @@ Open your internet browser and navigate to: <http://localhost:8080/api/>
 ## API Endpoints
 1. [Get All Phone Numbers](#1-get-all-phone-numbers) - ```GET /api/numbers/```
 2. [Get A Customer's Phone Numbers](#2-get-a-customers-phone-numbers) - ```GET /api/numbers/?customer=id```
-3. [Activate A Phone Number](#3-activate-a-phone-number) - ```GET /api/numbers/?activat=:phoneNumber```
+3. [Activate A Phone Number](#3-activate-a-phone-number) - ```GET /api/numbers/?activate=phoneNumber```
 
 ### 1. Get All Phone Numbers
 Get an array of all phone numbers.
